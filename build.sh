@@ -1,6 +1,6 @@
 #!/bin/bash
 
-IMAGE_NAME="discovery-server-atendeia"
+IMAGE_NAME="atendeia-discovery-server"
 VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
 
 echo "➡️ Versão detectada no pom.xml: $VERSION"

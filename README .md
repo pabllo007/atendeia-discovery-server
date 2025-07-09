@@ -38,12 +38,12 @@ mvn clean package -DskipTests
 
 #### 📌 2.2. Crie a imagem Docker:
 ```bash
-docker build -t discovery-server-atendeia:latest .
+docker build -t atendeia-discovery-server:latest .
 ```
 
 #### 📌 2.3. Execute o container:
 ```bash
-docker run -d -p 8761:8761 --name discovery-server discovery-server-atendeia:latest
+docker run -d -p 8761:8761 --name discovery-server atendeia-discovery-server:latest
 ```
 
 Acesse:  
@@ -68,12 +68,12 @@ chmod +x build.sh
 Esse script irá:
 - Obter a versão atual do `pom.xml`;
 - Criar a imagem Docker com duas tags:
-  - `discovery-server-atendeia:<versão>`
-  - `discovery-server-atendeia:latest`
+  - `atendeia-discovery-server:<versão>`
+  - `atendeia-discovery-server:latest`
 
 #### 📌 3.3. Executar a imagem:
 ```bash
-docker run -d -p 8761:8761 --name discovery-server discovery-server-atendeia:<versão>
+docker run -d -p 8761:8761 --name discovery-server atendeia-discovery-server:<versão>
 ```
 
 ---
@@ -99,7 +99,7 @@ server:
 
 spring:
   application:
-    name: discovery-server-atendeia
+    name: atendeia-discovery-server
 
 eureka:
   instance:

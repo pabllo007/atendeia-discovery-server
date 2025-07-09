@@ -3,7 +3,11 @@ server:
 
 spring:
   application:
-    name: discovery-server-atendeia
+    name: atendeia-discovery-server
+
+  config:
+    import: optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888}
+    # Usará o Config Server da variável de ambiente CONFIG_SERVER_URL se presente. Caso contrário, http://localhost:8888 será o padrão.
 
 eureka:
   instance:
@@ -13,6 +17,8 @@ eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
+    service-url:
+      defaultZone: http://${EUREKA_HOST:localhost}:8761/eureka/
 
   server:
     wait-time-in-ms-when-sync-empty: 0

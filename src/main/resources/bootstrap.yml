@@ -1,6 +1,0 @@
-spring:
-  application:
-    name: discovery-server-atendeia
-
-  config:
-    import: optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888} #se a variável de ambiente CONFIG_SERVER_URL não estiver presente, o sistema usará http://localhost:8888 como valor padrão. Isso cobre o ambiente local.
